@@ -28,6 +28,7 @@ git push -o repo.private=false -u local main
 ## Deploy to ArgoCD
 
 ```sh
-#
-argocd app create debug-shell --repo  http://gitea-http.git.svc.cluster.local:3000/aruba-demo/debug-shell.git --path debug-shell --dest-server https://kubernetes.default.svc --dest-namespace default --sync-policy auto --upsert
+# Create an ArgoCD app deployed via Helm
+argocd app create debug-shell --repo  http://gitea-http.git.svc.cluster.local:3000/aruba-demo/debug-shell.git --path debug-shell --dest-server https://kubernetes.default.svc --dest-namespace default --sync-policy auto --upsert --values ../values.yaml
+
 ```
