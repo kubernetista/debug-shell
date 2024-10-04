@@ -25,10 +25,9 @@ git remote add local http://git.localhost:8000/aruba-demo/$(basename "${PWD}").g
 git push -o repo.private=false -u local main
 ```
 
-## Deploy to ArgoCD
+## Deploy an Nginx container using the Helm chart with ArgoCD
 
 ```sh
-# Create an ArgoCD app deployed via Helm
+# Create an ArgoCD app deployed via Helm the helm chart in this repo
 argocd app create debug-shell --repo  http://gitea-http.git.svc.cluster.local:3000/aruba-demo/debug-shell.git --path debug-shell --dest-server https://kubernetes.default.svc --dest-namespace default --sync-policy auto --upsert --values ../values.yaml
-
 ```
