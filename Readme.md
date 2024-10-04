@@ -1,6 +1,6 @@
 # Deploy debug-shell
 
-## Deploy with kubectl
+## Deploy an Ubuntu container with kubectl
 
 ```sh
 export APP_NS="default"
@@ -9,7 +9,7 @@ export APP_IMAGE="ubuntu:latest"
 export PORT_EXT=8080
 export PORT_INT=80
 
-# run and change the entrypoint to let it run indefinitely
+# Run an Ubuntu container and change the entrypoint to let it run indefinitely
 kubectl -n ${APP_NS} create deployment --image=${APP_IMAGE} ${APP_NAME} --port=${PORT_INT} -o yaml --dry-run=client \
   -- /bin/sh -c "sleep infinity" \
   | kubectl neat
