@@ -1,0 +1,13 @@
+environments:
+  default:
+    values:
+      - ./default.yaml
+
+releases:
+  - name: debug-shell
+    namespace: {{ .Values.namespace | quote }}
+    chart: ../debug-shell
+    values:
+      - ../values.yaml.gotmpl
+      - ingress_issuer: letsencrypt-staging
+      - ingress_hostname: debug-shell.{{ requiredEnv "DOMAIN_ZONE" }}

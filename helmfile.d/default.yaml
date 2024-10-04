@@ -1,0 +1,11 @@
+# These default values can be overridden per environment in /config/<env>.yaml files
+
+# chart_version: 3.26.0
+
+# Leave unset to use default image repository set by chart
+# image_repository: "k8s.gcr.io/ingress-nginx/controller"
+
+# Leave unset to use default version set by chart. Update chart to update version.
+# image_tag: "v0.35.0"
+
+namespace: default
