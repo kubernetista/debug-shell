@@ -8,7 +8,7 @@
 
 ```sh
 # add useful CLI tools
-apt-get -y install iputils-ping dnsutils netcat-openbsd telnet
+apt-get -y install iputils-ping netcat-openbsd telnet dnsutils iproute2
 ```
 
 ## Deploy an Ubuntu container with kubectl
