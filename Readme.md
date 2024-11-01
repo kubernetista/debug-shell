@@ -8,7 +8,7 @@
 
 ```sh
 # add useful CLI tools
-apt-get -y install iputils-ping netcat-openbsd telnet dnsutils iproute2
+apt-get -y install procps lsof iputils-ping netcat-openbsd telnet dnsutils iproute2
 ```
 
 ## Build Docker image and push to GHCR
@@ -27,7 +27,7 @@ docker push ghcr.io/kubernetista/debug-shell:latest
 docker push ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
 
 # test
-docker run --rm -it ghcr.io/kubernetista/debug-shell:latest -- bash
+docker run --rm -it ghcr.io/kubernetista/debug-shell:latest bash
 
 ```
 
