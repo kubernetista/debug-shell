@@ -1,10 +1,10 @@
 # Deploy debug-shell
 
-## TODO: much needed updates
+## TODO
 
-1. add more CLI tools (see below)
-2. create docker image
-3. switch to kustomize (and eventually get rid of the Helm repo)
+- switch to kustomize (and eventually get rid of the Helm repo)
+
+## Customize the image, build and push
 
 ```sh
 # add useful CLI tools
