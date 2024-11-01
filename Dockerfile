@@ -1,4 +1,4 @@
-# Use the latest Nginx / Ubuntu image as the base
+# Use the latest Nginx / Debian image as the base
 FROM nginx:latest
 
 # Update the package list and install the required packages
