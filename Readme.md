@@ -2,7 +2,7 @@
 
 ## TODO
 
-- switch to kustomize (and eventually get rid of the Helm repo)
+- -
 
 ## Add required tools
 
