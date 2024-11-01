@@ -31,6 +31,17 @@ docker run --rm -it ghcr.io/kubernetista/debug-shell:latest bash
 
 ```
 
+## Deploy with kustomize
+
+```sh
+#
+kubectl apply -k kustomize/
+
+# or
+kustomize build ./kustomize | kubectl apply -f -
+
+```
+
 ## Deploy an Ubuntu container with kubectl
 
 ```sh
