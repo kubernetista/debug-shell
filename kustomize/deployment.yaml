@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug-shell
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: debug-shell
+      app.kubernetes.io/instance: debug-shell
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: debug-shell
+        app.kubernetes.io/instance: debug-shell
+    spec:
+      containers:
+        - name: debug-shell
+          image: ghcr.io/kubernetista/debug-shell:latest
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
