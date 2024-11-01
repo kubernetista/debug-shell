@@ -1,5 +1,16 @@
 # Deploy debug-shell
 
+## TODO: much needed updates
+
+1. add more CLI tools (see below)
+2. create docker image
+3. switch to kustomize (and eventually get rid of the Helm repo)
+
+```sh
+# add useful CLI tools
+apt-get -y install iputils-ping dnsutils netcat-openbsd telnet
+```
+
 ## Deploy an Ubuntu container with kubectl
 
 ```sh
