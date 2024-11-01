@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: debug-shell
-          image: nginx:{{ .Values.image.tag }}
+          image: localhost:5013/debug-shell:latest
           ports:
             - name: http
               containerPort: 80
