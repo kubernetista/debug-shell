@@ -4,7 +4,7 @@
 
 - switch to kustomize (and eventually get rid of the Helm repo)
 
-## Customize the image, build and push
+## Add required tools
 
 ```sh
 # add useful CLI tools
