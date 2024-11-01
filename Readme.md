@@ -11,6 +11,26 @@
 apt-get -y install iputils-ping netcat-openbsd telnet dnsutils iproute2
 ```
 
+## Build Docker image and push to GHCR
+
+```sh
+# BUILD
+DEBUG_SHELL_TAG=$(date +"%Y%m%d.%H%M%S-%Z")
+docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+
+# Additional tags
+docker tag debug-shell ghcr.io/kubernetista/debug-shell:latest
+# docker tag debug-shell ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+
+# push to GHCR
+docker push ghcr.io/kubernetista/debug-shell:latest
+docker push ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+
+# test
+docker run --rm -it ghcr.io/kubernetista/debug-shell:latest -- bash
+
+```
+
 ## Deploy an Ubuntu container with kubectl
 
 ```sh
