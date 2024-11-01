@@ -8,7 +8,7 @@ resources:
   - service.yaml
   - ingress.yaml
 
-# # You can add common labels, annotations, or other customization here if needed
+# You can add common labels, annotations, or other customization here if needed
 labels:
 - includeSelectors: true
   pairs:
