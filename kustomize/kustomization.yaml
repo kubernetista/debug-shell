@@ -8,7 +8,9 @@ resources:
   - service.yaml
   - ingress.yaml
 
-# You can add common labels, annotations, or other customization here if needed
-commonLabels:
-  app.kubernetes.io/name: debug-shell
-  app.kubernetes.io/instance: debug-shell
+# # You can add common labels, annotations, or other customization here if needed
+labels:
+- includeSelectors: true
+  pairs:
+    app.kubernetes.io/name: debug-shell
+    app.kubernetes.io/instance: debug-shell
