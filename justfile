@@ -15,7 +15,7 @@ build:
     echo -e "Building image with tag: ${IMAGE_TAG}\n"
 
     # Substitute the version in the index.html file
-    sed -i '' "s/<b>\[.*\]<\/b>/<b>\[${IMAGE_TAG}\]<\/b>/" docker-build/index.html
+    sed -i '' "s/<pre>\[.*\]<\/b>/<b>\[${IMAGE_TAG}\]<\/pre>/" docker-build/index.html
 
     # Build the image
     docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
