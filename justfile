@@ -11,6 +11,7 @@ help:
 build:
     #!/bin/bash
     export IMAGE_TAG=$(git describe --tags --abbrev=4 --always)
+    echo -e "Building image with tag: ${IMAGE_TAG}\n"
     # export IMAGE_TAG=$(date +"%Y%m%d.%H%M%S-%Z")
     docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
     # Additional tags
