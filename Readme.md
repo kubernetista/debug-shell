@@ -15,16 +15,17 @@ apt-get -y install procps lsof iputils-ping netcat-openbsd telnet dnsutils iprou
 
 ```sh
 # BUILD
-DEBUG_SHELL_TAG=$(date +"%Y%m%d.%H%M%S-%Z")
-docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+# export IMAGE_TAG=$(date +"%Y%m%d.%H%M%S-%Z")
+export IMAGE_TAG=$(git describe --tags --abbrev=4 --always)
+docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
 
 # Additional tags
 docker tag debug-shell ghcr.io/kubernetista/debug-shell:latest
-# docker tag debug-shell ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+# docker tag debug-shell ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
 
 # push to GHCR
 docker push ghcr.io/kubernetista/debug-shell:latest
-docker push ghcr.io/kubernetista/debug-shell:${DEBUG_SHELL_TAG}
+docker push ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
 
 # test
 docker run --rm -it ghcr.io/kubernetista/debug-shell:latest bash
