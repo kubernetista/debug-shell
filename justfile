@@ -13,8 +13,10 @@ build:
     export IMAGE_TAG=$(git describe --tags --abbrev=4 --always)
     # export IMAGE_TAG=$(date +"%Y%m%d.%H%M%S-%Z")
     echo -e "Building image with tag: ${IMAGE_TAG}\n"
+
     # Substitute the version in the index.html file
-    sed -i "s/<h4>Version .*<\/h4>/<h4>Version ${IMAGE_TAG}<\/h4>/" docker-build/index.html
+    sed -i '' "s/<b>\[.*\]<\/b>/<b>\[${IMAGE_TAG}\]<\/b>/" docker-build/index.html
+
     # Build the image
     docker build . -t debug-shell -t ghcr.io/kubernetista/debug-shell:${IMAGE_TAG}
     # Add latest tag
