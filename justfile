@@ -41,3 +41,7 @@ build-test-start: build test-start
 
 # Build and Push the application
 build-push: build push
+
+# Restart the application running in k8s
+kube-restart:
+    kubectl -n default rollout restart deployment/debug-shell
